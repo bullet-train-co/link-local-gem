@@ -25,4 +25,5 @@ echo "---------------------------------------------------------"
 ls -al $GEM_PATH
 echo "---------------------------------------------------------"
 # TODO: We should be able to add this line back once we merge the un-pinning of jbuilder-schema
-bundle lock --conservative --update $GEM_NAME
+bundle install
+#bundle lock --conservative --update $GEM_NAME
