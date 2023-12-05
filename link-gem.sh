@@ -22,6 +22,7 @@ echo "gem \"$GEM_NAME\", path: \"$GEM_PATH\"" >> Gemfile
 echo "---------------------------------------------------------"
 cat Gemfile
 echo "---------------------------------------------------------"
-
+ls -al $GEM_PATH
+echo "---------------------------------------------------------"
 # TODO: We should be able to add this line back once we merge the un-pinning of jbuilder-schema
 bundle lock --conservative --update $GEM_NAME

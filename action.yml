@@ -13,11 +13,18 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: pwd
+    - run: pwd application_dir
       working-directory: ${{ inputs.application_dir }}
       shell: bash
-    - run: ls -al
+    - run: ls -al application_dir
       working-directory: ${{ inputs.application_dir }}
+      shell: bash
+
+    - run: pwd local_gem_dir
+      working-directory: ${{ inputs.local_gem_dir }}
+      shell: bash
+    - run: ls -al local_gem_dir
+      working-directory: ${{ inputs.local_gem_dir }}
       shell: bash
 
     - name: Link local repos
