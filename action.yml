@@ -25,8 +25,8 @@ runs:
       run: ./link-gem.sh
       shell: bash
       env:
-        application_dir: ${{ inputs.application_dir }}
-        local_gem_dir: ${{ inputs.local_gem_dir }}
+        APPLICATION_DIR: ${{ inputs.application_dir }}
+        LOCAL_GEM_DIR: ${{ inputs.local_gem_dir }}
         WORKSPACE: ${{ github.workspace }}
 
     - run: pwd
