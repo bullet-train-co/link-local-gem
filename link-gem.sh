@@ -14,7 +14,14 @@ GEMSPEC=$(ls $GEMSPEC_PATH) # /home/runner/work/jbuilder-schema/jbuilder-schema/
 GEMSPEC_FILE=$(basename -- "$GEMSPEC") # jbuilder-schema.gemspec
 GEM_NAME="${GEMSPEC_FILE%.*}" # jbuilder-schema
 
+echo "linking pacakge ${GEM_NAME}"
+grep -v "gem \"$GEM_NAME\"" Gemfile > Gemfile.tmp
+mv Gemfile.tmp Gemfile
 echo "gem \"$GEM_NAME\", path: \"$GEM_PATH\"" >> Gemfile
 
+echo "---------------------------------------------------------"
+cat Gemfile
+echo "---------------------------------------------------------"
+
 # TODO: We should be able to add this line back once we merge the un-pinning of jbuilder-schema
-#bundle lock --conservative --update $GEM_NAME
+bundle lock --conservative --update $GEM_NAME
