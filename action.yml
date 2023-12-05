@@ -13,17 +13,21 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: pwd application_dir
+    - run: pwd
+      name: "pwd application_dir"
       working-directory: ${{ inputs.application_dir }}
       shell: bash
-    - run: ls -al application_dir
+    - run: ls -al
+      name: "ls -al application_dir"
       working-directory: ${{ inputs.application_dir }}
       shell: bash
 
-    - run: pwd local_gem_dir
+    - run: pwd
+      name: "pwd local_gem_dir"
       working-directory: ${{ inputs.local_gem_dir }}
       shell: bash
-    - run: ls -al local_gem_dir
+    - run: ls -al
+      name: "ls -al local_gem_dir"
       working-directory: ${{ inputs.local_gem_dir }}
       shell: bash
 
